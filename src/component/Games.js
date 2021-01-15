@@ -26,15 +26,17 @@ export default class Games extends Component {
         <div className="list">
           {this.state.games.map(game =>
             <div className="card">
-              <img src={game.imageUrl} alt="game" ></img>
-
 
               <div className="title">{game.name}</div>
-              <div>{game.age}</div>
-              <div>{game.device}</div>
-              <div>{game.priceForRent}</div>
+              <div className="info">
+                <div>Age: {game.age}+</div>
+                <div>Platform: {game.device}</div>
+                <div>Price: {game.priceForRent} zł</div>
+              </div>
+              <button>Rezerwuj</button>
             </div>
           )}
+          
         </div>
       </div>
     )
