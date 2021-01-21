@@ -7,11 +7,11 @@ function UserSignIn() {
 
   const [role, setRole] = useState("");
 
-  const submitHandler = (e) => {
-    e.preventDefault;
+  //const submitHandler = (e) => {
+    //e.preventDefault;
     //wkrotce signin action
-  }
-  const checkUser = () => {
+ // }
+  /*const checkUser = () => {
     axios.get('', {
 
       mail: mail,
@@ -20,11 +20,11 @@ function UserSignIn() {
     }).then(() => {
       console.log("success")
     });
-  };
+  };*/
   return (
     <div className="user_container">
       <div>Sign in</div>
-      <form className="form" onSubmit={submitHandler}>
+      <form className="form" >
         <label>E-mail</label>
         <input type="text" onChange={(event) => {
           setMail(event.target.value)

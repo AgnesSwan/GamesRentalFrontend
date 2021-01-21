@@ -3,8 +3,8 @@ import './App.css';
 import Games from './component/Games';
 import Topbar from './component/Topbar';
 import { Route, Switch } from 'react-router-dom';
-import Register from './component/Register';
-import Signin from './component/Signin';
+//import Register from './component/Register';
+
 
 export default class App extends Component {
 
@@ -16,9 +16,7 @@ export default class App extends Component {
         <Topbar />
         <Switch>
           <Route exact path="/" component={Games} />
-          <Route exact path="/signin" component={Signin} />
 
-          <Route exact path="/userregistration" component={Register} />
         </Switch>
 
       </div>

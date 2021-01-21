@@ -1,32 +1,29 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import './Games.css';
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: 'http://localhost:3000/games'
-})
-export default class Games extends Component {
-  state = {
-    games: []
-  }
-  const
-  componentDidMount() {
-    api.get('/')
+
+export default function Games() {
+  const [games, setGames] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/games')
       .then(res => {
-        const games = res.data.info;
-        this.setState({ games });
-
+        console.log(res)
+        setGames(res.data.info)
       })
-  }
 
-  render() {
-    const { game, addGame } = useState;
 
-    return (
-      <div className="app" >
+  }, []);
 
+
+  return (
+    <div className="app" >
+
+      <>
         <div className="list">
-          {this.state.games.map(game =>
+          {games.map((game) => (
             <div className="card">
 
               <div className="title">{game.name}</div>
@@ -35,14 +32,16 @@ export default class Games extends Component {
                 <div>Platform: {game.device}</div>
                 <div>Price: {game.priceForRent} zł</div>
               </div>
-           <button onClick={()=>addGame(game._id)}>Rezerwuj</button>
+
 
             </div>
-          )}
+          ))}
 
         </div>
-      </div>
-    )
-  }
 
+      </>
+    </div>
+  )
 }
+
+// <button onClick={() => addGame(game._id)}>Rezerwuj</button>
