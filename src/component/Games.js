@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import './Games.css';
 import axios from 'axios';
 
@@ -9,6 +9,7 @@ export default class Games extends Component {
   state = {
     games: []
   }
+  const
   componentDidMount() {
     api.get('/')
       .then(res => {
@@ -18,8 +19,9 @@ export default class Games extends Component {
       })
   }
 
-
   render() {
+    const { game, addGame } = useState;
+
     return (
       <div className="app" >
 
@@ -33,10 +35,11 @@ export default class Games extends Component {
                 <div>Platform: {game.device}</div>
                 <div>Price: {game.priceForRent} zł</div>
               </div>
-              <button>Rezerwuj</button>
+           <button onClick={()=>addGame(game._id)}>Rezerwuj</button>
+
             </div>
           )}
-          
+
         </div>
       </div>
     )
