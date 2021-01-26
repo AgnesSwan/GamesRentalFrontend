@@ -11,9 +11,7 @@ const Topbar = () => (
         <li>
           <Link to='/'>Available games</Link>
         </li>
-        <li>
-          <Link to='/signin'>Log in</Link>
-        </li>
+
 
 
 
