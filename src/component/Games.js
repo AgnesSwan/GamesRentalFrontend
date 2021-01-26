@@ -3,6 +3,7 @@ import './Games.css';
 import axios from 'axios';
 
 
+
 export default function Games() {
   const [games, setGames] = useState([]);
   const [title, setTitle] = useState("");
@@ -11,6 +12,8 @@ export default function Games() {
   const [age, setAge] = useState(0);
   const [device, setDevice] = useState("");
   const [description, setDescription] = useState("");
+
+
   useEffect(() => {
     axios
       .get('http://localhost:3000/games')
@@ -46,52 +49,44 @@ export default function Games() {
   return (
     <div className="app" >
       <div className="newgame">
-
-        <label>Name:</label>
-        <input
-          type="text"
-          onChange={(event) => {
+        <div className="elem"><div>Name:</div>
+          <input type="text" onChange={(event) => {
             setTitle(event.target.value);
           }}
-        />
-        <label>Price:</label>
-        <input
-          type="number"
-          onChange={(event) => {
+          /></div>
+        <div className="elem"><div>Price:</div>
+          <input type="number" onChange={(event) => {
             setPrice(event.target.value);
-          }}
-        />
-        <label>Level:</label>
-        <input
-          type="text"
-          onChange={(event) => {
+          }} /></div>
+        <div className="elem"><div>Level:</div>
+          <input type="text" onChange={(event) => {
             setLevel(event.target.value);
           }}
-        />
-        <label>Age:</label>
-        <input
-          type="number"
-          onChange={(event) => {
+          /></div>
+        <div className="elem"><div>Age:</div>
+          <input type="text" onChange={(event) => {
             setAge(event.target.value);
           }}
-        />
-        <label>Device:</label>
-        <input
-          type="text"
-          onChange={(event) => {
+          /></div>
+
+        <div className="elem"><div>Device:</div>
+          <input type="text" onChange={(event) => {
             setDevice(event.target.value);
           }}
-        />
-        <label>Description:</label>
-        <input
-          type="text"
-          onChange={(event) => {
+          /></div>
+        <br></br>
+        <div className="elem"><div>Description:</div>
+          <input type="text" onChange={(event) => {
             setDescription(event.target.value);
           }}
-        />
-        <button onClick={addGame}>Add Employee</button>
-      </div>
+          /></div>
 
+
+
+
+
+      </div>
+      <button className="button" onClick={addGame}>Add</button>
 
 
       <>
@@ -109,6 +104,7 @@ export default function Games() {
 
             </div>
           ))}
+
 
         </div>
 
