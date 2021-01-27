@@ -80,11 +80,6 @@ export default function Games() {
             setDescription(event.target.value);
           }}
           /></div>
-
-
-
-
-
       </div>
       <button className="button" onClick={addGame}>Add</button>
 
@@ -113,4 +108,3 @@ export default function Games() {
   )
 }
 
-// <button onClick={() => addGame(game._id)}>Rezerwuj</button>
